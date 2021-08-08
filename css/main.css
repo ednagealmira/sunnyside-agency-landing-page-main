@@ -36,10 +36,15 @@ font-family: 'Fraunces', serif; */
   color: var(--dark-saturated-cyan);
 }
 
+.attribution a:hover {
+  color: var(--white);
+}
+
 .container-header {
   background-image: url(../images/mobile/image-header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 75vh;
   /* height: 100vh; */
   padding: 0px 24px 32px;
@@ -49,20 +54,25 @@ font-family: 'Fraunces', serif; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: -webkit-sticky;
+  padding-top: 24px;
+  /* position: -webkit-sticky;
   position: sticky;
   top: 0px;
   padding: 24px;
-  background-color: var(--medium-turquoise);
+  background-color: var(--medium-turquoise); */
 }
 
 .navbar #logo {
   height: 24px;
 }
 
-.navbar #hamburger {
+.navbar .nav-mobile #hamburger {
   height: 18px;
   width: 24px;
+}
+
+.navbar .nav-desktop {
+  visibility: hidden;
 }
 
 .content-header {
@@ -80,12 +90,12 @@ font-family: 'Fraunces', serif; */
   text-align: center;
   color: var(--white);
   letter-spacing: 6.25px;
-  padding-top: 5.5rem;
+  padding-top: 72px;
 }
 
 .content-header img {
-  padding-top: 52px;
-  width: 2rem;
+  padding-top: 48px;
+  width: 30px;
 }
 
 .container-branding {
@@ -99,14 +109,16 @@ font-family: 'Fraunces', serif; */
   object-fit: cover;
 }
 
-.content-branding {
+.content-branding-1,
+.content-branding-2 {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
   padding: 64px 24px;
 }
 
-.content-branding h2 {
+.content-branding-1 h2,
+.content-branding-2 h2 {
   font-family: "Fraunces", serif;
   font-style: normal;
   font-weight: 900;
@@ -118,7 +130,8 @@ font-family: 'Fraunces', serif; */
   padding-bottom: 24px;
 }
 
-.content-branding p {
+.content-branding-1 p,
+.content-branding-2 p {
   font-family: "Barlow", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -130,7 +143,8 @@ font-family: 'Fraunces', serif; */
   padding-bottom: 32px;
 }
 
-.content-branding a {
+.content-branding-1 a,
+.content-branding-2 a {
   font-family: "Fraunces", serif;
   font-style: normal;
   font-weight: 900;
@@ -143,19 +157,20 @@ font-family: 'Fraunces', serif; */
   text-decoration-thickness: 10px;
 }
 
-.content-branding .link-1 {
+.content-branding-1 .link,
+.content-branding-2 .link {
   text-decoration-color: var(--yellow-a);
 }
 
-.content-branding .link-2 {
+.content-branding-2 .link {
   text-decoration-color: var(--soft-red-a);
 }
 
-.content-branding .link-1:hover {
+.content-branding-1 .link:hover {
   text-decoration-color: var(--yellow);
 }
 
-.content-branding .link-2:hover {
+.content-branding-2 .link:hover {
   text-decoration-color: var(--soft-red);
 }
 
@@ -166,6 +181,7 @@ font-family: 'Fraunces', serif; */
   justify-content: flex-end;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 90vh;
   padding: 0px 24px 59px;
   background-image: url(../images/mobile/image-graphic-design.jpg);
@@ -271,14 +287,38 @@ font-family: 'Fraunces', serif; */
   color: var(--grayish-blue);
 }
 
-.container-gallery-mobile {
+.container-gallery {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100vw;
 }
 
-.container-gallery-mobile img {
+/* .container-gallery img {
   width: 50vw;
   object-fit: cover;
+} */
+
+.container-gallery .gallery-1,
+.gallery-2,
+.gallery-3,
+.gallery-4 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 50vw;
+}
+
+.container-gallery .gallery-1 {
+  background-image: url(../images/mobile/image-gallery-milkbottles.jpg);
+}
+.container-gallery .gallery-2 {
+  background-image: url(../images/mobile/image-gallery-orange.jpg);
+}
+.container-gallery .gallery-3 {
+  background-image: url(../images/mobile/image-gallery-cone.jpg);
+}
+.container-gallery .gallery-4 {
+  background-image: url(../images/mobile/image-gallery-sugar-cubes.jpg);
 }
 
 .footer {
@@ -324,6 +364,14 @@ font-family: 'Fraunces', serif; */
   text-decoration: none;
 }
 
+.footer .links a:hover {
+  color: var(--white);
+}
+
+.footer .socials a:hover {
+  filter: brightness(600%);
+}
+
 @media (min-width: 1024px) {
   .container-header {
     background-image: url(../images/desktop/image-header.jpg);
@@ -332,11 +380,19 @@ font-family: 'Fraunces', serif; */
   }
 
   .navbar {
-    padding: 32px 48px;
+    padding: 32px 0px;
   }
 
   .navbar #logo {
     height: 33px;
+  }
+
+  .navbar .nav-desktop {
+    visibility: visible;
+  }
+
+  .navbar .nav-mobile {
+    visibility: hidden;
   }
 
   .content-header h1 {
@@ -348,5 +404,117 @@ font-family: 'Fraunces', serif; */
   .content-header img {
     padding-top: 96px;
     width: 2rem;
+  }
+
+  .container-branding {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container-branding div img {
+    width: 50vw;
+  }
+
+  .container-branding .transform-img {
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .container-branding .transform-img img {
+    width: 100%;
+  }
+
+  .container-branding .content-branding-1 {
+    padding: 157px 110px 157px 165px;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 1;
+  }
+
+  .container-branding .content-branding-2 {
+    padding: 157px 165px 157px 110px;
+  }
+
+  .content-branding-1 h2,
+  .content-branding-2 h2 {
+    font-size: 40px;
+    padding-bottom: 32px;
+  }
+
+  .content-branding-1 h2,
+  .content-branding-2 h2 {
+    padding-bottom: 40px;
+  }
+
+  .content-branding-1 h2,
+  .content-branding-1 p,
+  .content-branding-1 a,
+  .content-branding-2 h2,
+  .content-branding-2 p,
+  .content-branding-2 a {
+    text-align: left;
+  }
+
+  .content-branding-img-1 {
+    background-image: url(../images/desktop/image-graphic-design.jpg);
+  }
+
+  .content-branding-img-2 {
+    background-image: url(../images/desktop/image-photography.jpg);
+  }
+
+  .container-testimonial {
+    padding: 160px 105px;
+  }
+
+  .container-testimonial h3 {
+    font-size: 20px;
+  }
+
+  .container-testimonial .wrapper-content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+  }
+
+  .container-testimonial .wrapper-content .content-testi {
+    padding: 0px 30px;
+  }
+
+  .container-testimonial .wrapper-content .content-testi .client-testi {
+    padding: 58px 0px 69px;
+    max-height: 96px;
+  }
+
+  .container-gallery {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 447px;
+  }
+
+  .container-gallery .gallery-1,
+  .gallery-2,
+  .gallery-3,
+  .gallery-4 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 25vw;
+  }
+
+  .container-gallery .gallery-1 {
+    width: 100%;
+    background-image: url(../images/desktop/image-gallery-milkbottles.jpg);
+  }
+  .container-gallery .gallery-2 {
+    background-image: url(../images/desktop/image-gallery-orange.jpg);
+  }
+  .container-gallery .gallery-3 {
+    background-image: url(../images/desktop/image-gallery-cone.jpg);
+  }
+  .container-gallery .gallery-4 {
+    background-image: url(../images/desktop/image-gallery-sugarcubes.jpg);
+  }
+
+  .footer {
+    padding: 72px 500px 32px;
   }
 }
