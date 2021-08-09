@@ -34,6 +34,7 @@ font-family: 'Fraunces', serif; */
 
 .attribution a {
   color: var(--dark-saturated-cyan);
+  transition-duration: 0.4s;
 }
 
 .attribution a:hover {
@@ -71,8 +72,8 @@ font-family: 'Fraunces', serif; */
   width: 24px;
 }
 
-.navbar .nav-desktop {
-  visibility: hidden;
+.navbar .nav-menu {
+  display: none;
 }
 
 .content-header {
@@ -293,11 +294,6 @@ font-family: 'Fraunces', serif; */
   height: 100vw;
 }
 
-/* .container-gallery img {
-  width: 50vw;
-  object-fit: cover;
-} */
-
 .container-gallery .gallery-1,
 .gallery-2,
 .gallery-3,
@@ -350,6 +346,7 @@ font-family: 'Fraunces', serif; */
   line-height: 25px;
   letter-spacing: -0.128571px;
   color: hsl(167, 34%, 41%);
+  transition-duration: 0.4s;
 }
 
 .footer .socials {
@@ -362,6 +359,7 @@ font-family: 'Fraunces', serif; */
 
 .footer .socials a {
   text-decoration: none;
+  transition-duration: 0.4s;
 }
 
 .footer .links a:hover {
@@ -387,12 +385,55 @@ font-family: 'Fraunces', serif; */
     height: 33px;
   }
 
-  .navbar .nav-desktop {
-    visibility: visible;
+  .navbar .nav-mobile {
+    display: none;
   }
 
-  .navbar .nav-mobile {
-    visibility: hidden;
+  .navbar .nav-menu {
+    display: initial;
+  }
+
+  .navbar .nav-menu a {
+    font-family: "Barlow", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.128571px;
+    color: var(--white);
+    padding-right: 48px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+  }
+
+  .navbar .nav-menu a:hover {
+    /* font-size: 20px; */
+    text-shadow: hsla(0, 0%, 0%, 0.25) 1px 0 20px;
+  }
+
+  .navbar .nav-menu button {
+    font-family: "Fraunces", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.107143px;
+    text-transform: uppercase;
+    color: var(--very-dark-desaturated-cyan);
+    background-color: var(--white);
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 28px;
+    transition-duration: 0.4s;
+  }
+
+  .navbar .nav-menu button:hover {
+    color: white;
+    background: hsla(0, 0%, 100%, 0.25);
   }
 
   .content-header h1 {
