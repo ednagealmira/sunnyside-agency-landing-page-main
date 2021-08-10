@@ -1,5 +1,5 @@
-const navMenu = document.getElementById("navmenu");
-const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const hamburger = document.getElementById("nav-mobile");
 
 hamburger.addEventListener("click", function () {
   if (navMenu.classList.contains("hide")) {
