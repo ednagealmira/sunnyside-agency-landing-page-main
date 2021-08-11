@@ -175,6 +175,7 @@ font-family: 'Fraunces', serif; */
   display: flex;
   flex-direction: column;
   flex-flow: row wrap;
+  justify-content: center;
   background-color: var(--white);
   padding: 64px 24px;
 }
@@ -217,6 +218,7 @@ font-family: 'Fraunces', serif; */
   text-transform: uppercase;
   color: var(--text-title);
   text-decoration: none;
+  text-align: center;
   /* text-decoration-thickness: 10px; */
 }
 
@@ -535,6 +537,11 @@ font-family: 'Fraunces', serif; */
 
   .container-branding .transform-img img {
     width: 100%;
+  }
+
+  .content-branding-1,
+  .content-branding-2 {
+    justify-content: flex-start;
   }
 
   .container-branding .content-branding-1 {
